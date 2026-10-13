@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect | College Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#" class="logo">Campus<span>Connect</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#events" class="nav-btn">Explore Events</a>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="tagline">YOUR CAMPUS, YOUR EXPERIENCE</p>
+            <h1>Discover Events.<br> Create Memories.</h1>
+            <p>
+                Explore exciting college events, learn new skills,
+                meet new people and make your campus life unforgettable.
+            </p>
+            <a href="#events" class="primary-btn">Explore Events →</a>
+        </div>
+    </section>
+
+    <section class="events-section" id="events">
+        <div class="section-heading">
+            <p class="tagline">WHAT'S HAPPENING?</p>
+            <h2>Upcoming Events</h2>
+            <p>Find your next exciting campus experience.</p>
+        </div>
+
+        <div class="filters">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events..."
+                aria-label="Search events"
+            >
+
+            <select id="categoryFilter" aria-label="Filter by category">
+                <option value="All">All Categories</option>
+                <option value="Technical">Technical</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Sports">Sports</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+        </div>
+
+        <div class="event-grid" id="eventGrid">
+
+            <article class="event-card" data-category="Technical"
+                data-title="Tech Fest">
+                <img
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+                    alt="Students collaborating on technology">
+                <div class="event-info">
+                    <span class="category technical">TECHNICAL</span>
+                    <h3>Tech Fest 2026</h3>
+                    <p>Explore coding competitions, robotics and innovation.</p>
+                    <p class="event-detail">📅 October 24, 2026</p>
+                    <p class="event-detail">📍 Main Auditorium</p>
+                    <button class="register-btn"
+                        data-event="Tech Fest 2026">Register Now</button>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="Cultural"
+                data-title="Cultural Night">
+                <img
+                    src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80"
+                    alt="Live music festival">
+                <div class="event-info">
+                    <span class="category cultural">CULTURAL</span>
+                    <h3>Cultural Night</h3>
+                    <p>Enjoy music, dance, performances and celebrations.</p>
+                    <p class="event-detail">📅 November 5, 2026</p>
+                    <p class="event-detail">📍 Open Air Theatre</p>
+                    <button class="register-btn"
+                        data-event="Cultural Night">Register Now</button>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="Sports"
+                data-title="Sports Championship">
+                <img
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80"
+                    alt="Athletes running on a track">
+                <div class="event-info">
+                    <span class="category sports">SPORTS</span>
+                    <h3>Sports Championship</h3>
+                    <p>Show your talent in exciting inter-college sports.</p>
+                    <p class="event-detail">📅 November 12, 2026</p>
+                    <p class="event-detail">📍 College Sports Ground</p>
+                    <button class="register-btn"
+                        data-event="Sports Championship">Register Now</button>
+                </div>
+            </article>
+
+            <article class="event-card" data-category="Workshop"
+                data-title="AI Workshop">
+                <img
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+                    alt="Students attending a technology workshop">
+                <div class="event-info">
+                    <span class="category workshop">WORKSHOP</span>
+                    <h3>AI & ML Workshop</h3>
+                    <p>Learn practical artificial intelligence concepts.</p>
+                    <p class="event-detail">📅 November 20, 2026</p>
+                    <p class="event-detail">📍 Computer Lab</p>
+                    <button class="register-btn"
+                        data-event="AI & ML Workshop">Register Now</button>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="noEvents" hidden>No events found. Try another search.</p>
+    </section>
+
+    <section class="about-section" id="about">
+        <p class="tagline">ABOUT OUR PORTAL</p>
+        <h2>Everything Happening on Campus, in One Place.</h2>
+        <p>
+            CampusConnect helps students discover upcoming events,
+            explore their interests and register for campus activities
+            through one simple platform.
+        </p>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2>Stay Connected!</h2>
+        <p>Don't miss the next big event at your college.</p>
+        <a href="#events" class="primary-btn">Find Your Event</a>
+    </section>
+
+    <footer>
+        <p>© 2026 CampusConnect | College Event Management Portal</p>
+        <p>Designed for students, powered by creativity.</p>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal" id="registrationModal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="close-btn"
+                id="closeModal" aria-label="Close form">&times;</button>
+
+            <h2>Event Registration</h2>
+            <p id="selectedEvent">Register for your event</p>
+
+            <form id="registrationForm">
+                <label for="studentName">Full Name</label>
+                <input type="text" id="studentName"
+                    placeholder="Enter your name" required>
+
+                <label for="studentEmail">Email Address</label>
+                <input type="email" id="studentEmail"
+                    placeholder="Enter your email" required>
+
+                <label for="studentId">College ID</label>
+                <input type="text" id="studentId"
+                    placeholder="Enter your college ID" required>
+
+                <button type="submit" class="register-btn">
+                    Submit Registration
+                </button>
+            </form>
+
+            <p id="formMessage" role="status"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
